@@ -1,0 +1,17 @@
+$primaryColor: #2e6485;
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.mat-icon {
+  transform: scale(1.6);
+  color: $primaryColor;
+}
+
+span {
+  color: $primaryColor;
+}
+a {
+  color: $primaryColor;
+  text-decoration: none;
+}

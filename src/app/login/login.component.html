@@ -1,0 +1,28 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Inicia Sesión</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Usuario">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Contraseña">
+        </mat-form-field>
+      </mat-card-content>
+      <button mat-button color="primary" class="btn-block">Iniciar Sesión</button>
+    </form>
+
+  <span>¿No tienes cuenta? <a mat-button  [routerLink]="['register']">Registrate</a></span>
+
+  </mat-card>
+
+
+
+
+</div>

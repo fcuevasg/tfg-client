@@ -1,0 +1,11 @@
+$primaryColor: #2e6485;
+
+.container {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
