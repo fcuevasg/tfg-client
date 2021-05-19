@@ -1,6 +1,6 @@
-#TODO
+# TODO
 
-##Cosas que hacer para la parte de cliente:
+## Cosas que hacer para la parte de cliente:
 
 - [ ] Hacer la landing page ( Buscador de solicitud + más a preguntar a papa)
 - [ ] Hacer la vista de usuario (cuando des click en el account_circle)
@@ -9,7 +9,7 @@
 - [ ] Hacer vista de las solicitudes
 - [ ] Hacer vista de solicitudes, estado y comentarios
 
-##Cosas que hacer para la parte de admin:
+## Cosas que hacer para la parte de admin:
 
 - [ ] Hacer panel de admin
 - [ ] Hacer vista de solicitudes pendientes
