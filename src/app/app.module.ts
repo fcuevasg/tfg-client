@@ -8,6 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MaterialModule } from './material-module/material-module.module';
 import { PrimaryToolbarComponent } from './primary-toolbar/primary-toolbar.component';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 //import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     //MatButtonModule,
     MaterialModule,
   ],

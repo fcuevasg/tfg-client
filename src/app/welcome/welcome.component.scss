@@ -1,0 +1,32 @@
+$primaryColor: #2e6485;
+
+
+.searchButton {
+  font-size: 18px;
+  margin-left: 2vw;
+  margin-top:-2.6vh;
+  padding: 1vh 1.5vw;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+  background-color: $primaryColor;
+}
+
+.welcomeContent {
+
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: center;
+
+}
+
+.mat-form-field {
+  width: 20vw;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}

@@ -15,3 +15,13 @@ a {
   color: $primaryColor;
   text-decoration: none;
 }
+.toolbarBtns{
+
+  display:flex;
+  flex-direction: row;
+}
+
+.mat-primary{
+  background-color:rgb(0, 165, 0) !important;
+  color:white;
+}
