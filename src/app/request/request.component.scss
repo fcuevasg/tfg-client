@@ -1,0 +1,26 @@
+.Container{
+
+    background-color: #fefefe;
+    margin-top: 15vh;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "a1"
+      "a2";
+}
+.a1 { grid-area: a1; }
+.a2 { 
+    margin-top:5vh;
+    grid-area: a2; }
+
+    .mat-card-title{
+        display:block;
+        margin-bottom: 5vh;
+    }
+
+    .mat-form-field{
+        margin:0.3em;
+    }

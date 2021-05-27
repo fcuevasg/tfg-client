@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>Ayuntamiento de Sanlúcar de Barrameda</span>
+  <a [routerLink]="['/']" >Ayuntamiento de Sanlúcar de Barrameda</a>
   <span class="example-spacer"></span>
 
   <div class="toolbarBtns">
@@ -7,7 +7,7 @@
   <button mat-button [matMenuTriggerFor]="acc"><mat-icon>account_circle</mat-icon></button>
 </div>
 <mat-menu #acc="matMenu">
-  <button mat-menu-item><a matLine [routerLink]="['login']">Iniciar Sesión</a></button>
-  <button mat-menu-item><a matLine [routerLink]="['register']">Registrarse</a></button>
+  <button mat-menu-item><a matLine [routerLink]="['/login']">Iniciar Sesión</a></button>
+  <button mat-menu-item><a matLine [routerLink]="['/register']">Registrarse</a></button>
 </mat-menu>
 </mat-toolbar>
