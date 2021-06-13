@@ -1,5 +1,9 @@
 $primaryColor: #2e6485;
-
+.mat-toolbar{
+  box-shadow: 2px 5px 5px -6px rgba(0,0,0,1);
+  -webkit-box-shadow: 2px 5px 5px -6px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 5px 5px -6px rgba(0,0,0,1);
+}
 .example-spacer {
   flex: 1 1 auto;
 }
@@ -24,4 +28,8 @@ a {
 .mat-primary{
   background-color:rgb(0, 165, 0) !important;
   color:white;
+}
+
+.mat-primary:hover{
+  transform: scale(1.1)
 }

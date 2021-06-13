@@ -1,1 +1,110 @@
-<p>user-page works!</p>
+<h1>Mi Área</h1>
+<div class="container">
+
+
+
+
+
+  <mat-card class="containerLateral">
+
+    <aside class="barraLateral">
+
+      <mat-card-title>Menú</mat-card-title>
+
+
+      <div class="menuDisplay">
+        <button mat-button [matMenuTriggerFor]="afterMenu" class="menu">Solicitudes</button>
+        <mat-menu #afterMenu="matMenu" class="menu" xPosition="after">
+          <mat-list class="listado">
+            <mat-list-item>
+
+              <button mat-icon-button (click)="showInfo('first')">
+                <mat-icon matListIcon>open_in_new</mat-icon>
+              </button>
+              <a href="/createRequest">Crear solicitud</a>
+
+            </mat-list-item>
+            <mat-list-item>
+
+              <button mat-icon-button (click)="showInfo('first')">
+                <mat-icon matListIcon>pending_actions</mat-icon>
+              </button>
+              <a href="...">Pendientes</a>
+
+            </mat-list-item>
+            <mat-list-item>
+
+              <button mat-icon-button (click)="showInfo('first')">
+                <mat-icon matListIcon>done</mat-icon>
+              </button>
+              <a href="...">Aprobadas</a>
+
+            </mat-list-item>
+
+            <mat-list-item>
+
+              <button mat-icon-button (click)="showInfo('first')">
+                <mat-icon matListIcon>cancel</mat-icon>
+              </button>
+              <a href="...">Denegadas</a>
+
+            </mat-list-item>
+          </mat-list>
+        </mat-menu>
+
+
+
+        <!-- Menú de cuenta-->
+
+
+        <button mat-button [matMenuTriggerFor]="acc" class="menu">Cuenta</button>
+        <mat-menu #acc="matMenu" xPosition="after" class="menu">
+          <mat-list class="listado">
+            <mat-list-item>
+
+              <button mat-icon-button (click)="showInfo('first')">
+                <mat-icon matListIcon>manage_accounts</mat-icon>
+              </button>
+              <a href="...">Editar mi cuenta</a>
+
+            </mat-list-item>
+
+            <mat-list-item>
+
+              <button mat-icon-button (click)="showInfo('first')">
+                <mat-icon matListIcon>logout</mat-icon>
+              </button>
+              <a href="...">Cerrar Sesión</a>
+
+            </mat-list-item>
+
+
+
+          </mat-list>
+        </mat-menu>
+      </div>
+    </aside>
+  </mat-card>
+
+  <div class="display">
+
+
+
+
+
+    <mat-nav-list class="casetas">
+      <mat-list-item (click)="showInfo(caseta)" *ngFor="let caseta of casetas">
+        <mat-icon matLine>home_work</mat-icon>
+        <h3 matLine> {{caseta.name}} </h3>
+      </mat-list-item>
+    </mat-nav-list>
+
+
+
+    <mat-paginator [length]="size" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+  </div>
+
+
+
+</div>

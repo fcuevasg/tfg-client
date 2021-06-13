@@ -45,6 +45,7 @@
 
      
       <mat-divider></mat-divider>
+
       <form formGroupName="info" class="a2">
         <mat-card-title>Usuario </mat-card-title> <br>
         <mat-form-field appearance="outline">
@@ -91,5 +92,34 @@
 
 
 </form>
+
+
+
+<div class="comentarios">
+<mat-divider></mat-divider>
+
+  <h3>Comentarios</h3>
+  <mat-list class="listaComents">
+    <mat-list-item *ngFor="let message of messages">
+      <h3 matLine> {{message.user}} </h3>
+      <p matLine>
+        <span class="demo-2"> -- {{message.content}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+
+  <form [formGroup]="commentForm">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Añadir Comentario</mat-label>
+      <textarea matInput formControlName="comment"></textarea>
+    </mat-form-field>
+
+    <button (click)="submitForm()" mat-stroked-button color="primary">Enviar</button>
+
+  </form>
+
+  
+</div>
 
 </div>

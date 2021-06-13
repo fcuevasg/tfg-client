@@ -28,9 +28,13 @@
             <input matInput id="dSocial" formControlName="dSocial" #dSocial  >
           </mat-form-field>
     
-          <mat-form-field appearance="outline">
-            <mat-label>Modalidad</mat-label>
-            <input matInput id="modality" formControlName="modality" #modality  >
+          <mat-form-field appearance="fill">
+            <mat-label>Modalidades</mat-label>
+            <mat-select formControlName="modality">
+              <mat-option *ngFor="let m of mod" [value]="m.nombre" [ngValue]="m.value">
+                {{m.nombre}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
     
           <mat-form-field appearance="outline">

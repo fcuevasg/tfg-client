@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { RequestsService} from '../services/requests.service'
-import {FormBuilder,FormControl,FormGroup} from '@angular/forms'
+import {FormBuilder,FormControl,FormGroup, Validators} from '@angular/forms'
 import {casetaInfo} from '../interfaces/casetaInfo'
+import { message} from "../interfaces/comentario"
 
 
 
@@ -18,12 +19,20 @@ export class RequestComponent implements OnInit {
   private sub:any;
   requestData:casetaInfo;
   requestForm:FormGroup;
+  commentForm:FormGroup;
+
+  messages:message[];
+
 
   constructor(private route:ActivatedRoute,
               private service: RequestsService,
               private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.commentForm = this.fb.group({
+      comment:[null,[Validators.required]]
+    })
+
  this.cargarDatos();
  this.requestForm = this.fb.group({
    name: this.requestData.name,
@@ -46,12 +55,15 @@ export class RequestComponent implements OnInit {
    telefonos:this.requestData.telefonos[0]
 
  })
+
+
  
   }
 
   lookupRequest(id){
     this.service.getRequestByID(id).subscribe((data) => this.requestData = data);
     console.log(this.requestData)
+    this.service.getMessagesFromRequest(id).subscribe((data) => this.messages= data )
   }
 
 
@@ -63,6 +75,18 @@ export class RequestComponent implements OnInit {
     this.lookupRequest(this.requestID);
 
 
+  }
+
+
+
+  submitForm(){
+    let comment:message = {
+      user:"usuario",
+      content:this.commentForm.value.comment
+    }
+    
+    console.log("COMENTARIO ", this.commentForm.value)
+    this.service.sendComment(this.requestID, comment);
   }
 
 }
