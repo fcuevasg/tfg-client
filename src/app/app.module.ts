@@ -14,7 +14,7 @@ import { CreateRequestComponent } from './create-request/create-request.componen
 import { RegisterComponent } from './register/register.component';
 import { UserPageComponent } from './user-page/user-page.component';
 //import { MatButtonModule } from '@angular/material/button';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, WelcomeComponent, PrimaryToolbarComponent, LoginComponent, RequestComponent, CreateRequestComponent, RegisterComponent, UserPageComponent],
   imports: [
@@ -24,8 +24,9 @@ import { UserPageComponent } from './user-page/user-page.component';
     ReactiveFormsModule,
     //MatButtonModule,
     MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

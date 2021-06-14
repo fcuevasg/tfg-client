@@ -26,6 +26,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule} from '@angular/material/tree';
+import {MatGridListModule} from '@angular/material/grid-list'
+
 
 @NgModule({
   declarations: [],
@@ -35,6 +37,7 @@ import { MatTreeModule} from '@angular/material/tree';
     MatButtonModule,
     MatToolbarModule,
     MatMenuModule,
+    MatGridListModule,
     MatSelectModule,
     MatTabsModule,
     MatInputModule,
@@ -71,6 +74,7 @@ import { MatTreeModule} from '@angular/material/tree';
     MatChipsModule,
     MatSidenavModule,
     MatCheckboxModule,
+    MatGridListModule,
     MatCardModule,
     MatListModule,
     MatIconModule,

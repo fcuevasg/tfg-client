@@ -1,9 +1,9 @@
-          <mat-card-title>Registro</mat-card-title>
 
 <div class="Container">
     
 <form [formGroup]="registerForm" class="a2" (ngSubmit)="onSubmit()">
-            <mat-card-title>Usuario </mat-card-title> <br>
+  <mat-card-title>Registro</mat-card-title>
+         
             <mat-form-field appearance="outline">
                 <mat-label>Nombre</mat-label>
                 <input matInput id="nombreInfo" formControlName="nombre" #nombreInfo  >
@@ -18,6 +18,11 @@
                 <mat-label>Correo electronico</mat-label>
                 <input matInput id="correoInfo" formControlName="correo" #correoInfo  >
               </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" id="contraseña" formControlName="contraseña" #contraseña  >
+              </mat-form-field>
     
               <mat-form-field appearance="outline">
                 <mat-label>DNI</mat-label>
@@ -29,6 +34,11 @@
                 <input matInput id="domicilioInfo" formControlName="domicilio" #domicilioInfo  >
               </mat-form-field>
     
+              <mat-form-field appearance="outline">
+                <mat-label>Código Postal</mat-label>
+                <input matInput id="cp" formControlName="CP" #CP  >
+              </mat-form-field>
+
               <mat-form-field appearance="outline">
                 <mat-label>Provincia</mat-label>
                 <input matInput id="provinciaInfo" formControlName="provincia" #provinciaInfo  >

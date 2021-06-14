@@ -7,6 +7,7 @@ a {
 
 h1 {
   text-align: center;
+  font-size: 42px;  
 }
 
 
@@ -26,7 +27,10 @@ h1 {
 
 .barraLateral {
   grid-area: barraLateral;
-  height: 100%;
+  height: 90%;
+  background-color:white !important;
+
+    padding-bottom: 2vh;
 
 
 }
@@ -38,6 +42,7 @@ h1 {
     align-content: space-around;
     align-items: flex-start;
     height: 70%;
+    padding-bottom: 2vh;
 }
 
 .mat-paginator{
@@ -50,7 +55,10 @@ h1 {
 
 .containerLateral {
   width: 10vw;
-  height: 40vh !important;
+  height: 25vh !important;
+  background-color:#2e6485;
+
+
 
 }
 
@@ -59,26 +67,37 @@ h1 {
 
   grid-area: display;
   min-width: 70vw;
-  margin-left: 5vw;
+  margin-left: 0vw;
   height: 100%;
 
 
 
 }
+img{
+  position:relative;
+  left:0.8vw;
+  padding-top:2vh;
+  width: 200px;
+  height: 200px;
+}
+
+
+.mat-grid-list{
+  width: 70vw;
+  h3{
+    font-size: 26px !important;
+    text-align: center ;
+    font-weight: normal;
+
+  }
+}
 
 .casetas {
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
 
-  h3{
-    font-size: 26px !important;
 
-  }
+
+ 
   .mat-icon{
     text-align:center ;
     font-size: 42px !important;
@@ -86,7 +105,13 @@ h1 {
     width: max-content;
 
   }
+
+
 }
+.d1 { grid-area: d1; }
+.d2 { grid-area: d2; }
+.d3 { grid-area: d3; }
+.d4 { grid-area: d4; }
 
 .mat-card {
 
@@ -122,7 +147,41 @@ h1 {
 }
 
 .mat-card-title {
+  padding-top:2vh;
   font-size: 36px;
   font-weight: bold;
   text-align: center;
 }
+
+
+.mat-toolbar{
+  color:white !important;
+
+  h1{
+    position:relative;
+    left:18.5vw;
+    font-weight: bolder;
+  }
+  .mat-list-item{
+    color:white !important;
+  }
+  background: linear-gradient(90deg, $primaryColor,#f3f3f3);
+  box-shadow: 2px 5px 5px -6px rgba(0,0,0,1);
+  -webkit-box-shadow: 2px 5px 5px -6px rgba(0,0,0,1);
+  -moz-box-shadow: 2px 5px 5px -6px rgba(0,0,0,1);
+  border-radius: 3px;
+
+
+}
+
+
+
+.caseta{
+  background: linear-gradient(#f3f3f3,$primaryColor);
+
+ // background-color: black;
+  border-radius: 3px;
+  color:white;
+  width: 12vw;
+}
+ 

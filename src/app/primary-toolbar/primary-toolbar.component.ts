@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-primary-toolbar',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrimaryToolbarComponent implements OnInit {
 
-  constructor() { }
+  conected:boolean;
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    
+
+
+  }
+  isConected(){
+    
+   this.conected = this.authService.logIn;
+
+  }
+  closeSesion() {
+    this.authService.logout();
+    this.router.navigate(["/"]);
   }
 
 }

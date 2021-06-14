@@ -63,10 +63,10 @@ export class RequestsService {
 
 
 
-    if(this.authService.logIn){
+   // if(this.authService.logIn){
     //ID = Nombre caseta 
     return of(this.infoMockup)
-    }
+    //}
 
 
   }

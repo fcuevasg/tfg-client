@@ -4,10 +4,16 @@
 
   <div class="toolbarBtns">
   <button mat-menu-item><a mat-button color="primary" [routerLink]="['createRequest']">Crear una solicitud</a></button>
-  <button mat-button [matMenuTriggerFor]="acc"><mat-icon>account_circle</mat-icon></button>
+  <button mat-button [matMenuTriggerFor]="acc" (click) ="isConected()"> <mat-icon>account_circle</mat-icon></button>
 </div>
-<mat-menu #acc="matMenu">
+<mat-menu #acc="matMenu" >
+  <div *ngIf="!conected">
   <button mat-menu-item><a matLine [routerLink]="['/login']">Iniciar Sesión</a></button>
   <button mat-menu-item><a matLine [routerLink]="['/register']">Registrarse</a></button>
+</div>
+<div *ngIf="conected">
+  <button mat-menu-item><a matLine [routerLink]="['/login/user']">Mi perfil</a></button>
+  <button mat-menu-item (click)="closeSesion()">Cerrar Sesion</button>
+</div>
 </mat-menu>
 </mat-toolbar>

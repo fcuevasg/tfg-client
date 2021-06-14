@@ -31,8 +31,20 @@
 .mat-form-field {
   margin: 0.3em;
 }
-.listaComents{
-   
+.comentarios{
+
+  margin-top:2vh;
+  .mat-form-field{
+    width: 30vw !important;
+  }
+  .mat-card-title{
+    margin-top: 2vh;
+    margin-bottom: 0;
+  }
+
+  form{
+    margin-top:1vh;
+  }
 }
 
 .mat-list-item{
