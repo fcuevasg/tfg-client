@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService} from '../services/user.service'
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginForm:FormGroup;
+  
+
+
+  constructor(
+    private fb:FormBuilder,
+    private service:UserService
+  ) { }
 
   ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      usuario:[null,[Validators.required]],
+      contraseña:[null,[Validators.required]]
+    })
+
   }
 
+
+
+  onSubmit(){
+    this.service.login(this.loginForm.value);    
+
+
+  }
 }

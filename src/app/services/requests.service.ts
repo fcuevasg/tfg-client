@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import {casetaInfo, modalidades} from '../interfaces/casetaInfo'
 import { message } from '../interfaces/comentario';
 import { userInfo } from '../interfaces/userInfo';
+import { AuthService } from './auth.service';
 
 
 
@@ -15,7 +16,9 @@ export class RequestsService {
     console.log(data)
   }
 
-  constructor() { }
+  constructor(
+    private authService:AuthService
+  ) { }
 
   userInfoMockup:userInfo ={
     id:"1",
@@ -58,9 +61,12 @@ export class RequestsService {
 
   getRequestByID(id):Observable<casetaInfo>{
 
+
+
+    if(this.authService.logIn){
     //ID = Nombre caseta 
     return of(this.infoMockup)
-
+    }
 
 
   }
@@ -68,6 +74,7 @@ export class RequestsService {
   getRequestByUser(userID):Observable<casetaInfo[]>{
 
 
+    if(this.authService.logIn){
 
 
 
@@ -115,7 +122,7 @@ export class RequestsService {
 
 
     return of(infoArray);
-
+  }
 
   }
 
@@ -123,16 +130,20 @@ export class RequestsService {
 
 
   getMessagesFromRequest(id):Observable<message[]>{
+    if(this.authService.logIn){
 
 
     return of(this.messageMockup);
+    }
   }
 
 
   sendComment(id,comment:message){
+    if(this.authService.logIn){
 
     console.log(id,comment)
 
     //TODO enviar comentario with id and user
+    }
   }
 }

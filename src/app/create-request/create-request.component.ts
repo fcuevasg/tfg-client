@@ -33,24 +33,24 @@ export class CreateRequestComponent implements OnInit {
     this.mod.push({nombre:modalidades.SOLO,value:"test4"})
 
  this.requestForm = this.fb.group({
-   name:[null, [Validators.required]],
-   cif:[null, [Validators.required]],
-   cp:[null, [Validators.required]],
-   dSocial: [null, [Validators.required]],
+   name: new FormControl(null, [Validators.required,]),
+   cif:new FormControl(null, [Validators.required]),
+   cp:new FormControl(null, [Validators.required, Validators.pattern('[0-9]{5}')]),
+   dSocial: new FormControl(null, [Validators.required]),
    info:this.fb.group({
-    CP: [null, [Validators.required]],
-    apellido: [null, [Validators.required]],
-    correo: [null, [Validators.required]],
-    dni: [null, [Validators.required]],
-    domicilio: [null, [Validators.required]],
-    id: [null, [Validators.required]],
-    nombre: [null, [Validators.required]],
-    provincia:[null, [Validators.required]],
-    telefono: [null, [Validators.required]],
+    CP: new FormControl(null, [Validators.required,, Validators.pattern('[0-9]{5}')]),
+    apellido: new FormControl(null, [Validators.required]),
+    correo: new FormControl(null, [Validators.required,Validators.email]),
+    dni: new FormControl(null, [Validators.required,Validators.pattern('[0-9]{8}[A-Z]') ]),
+    domicilio: new FormControl(null, [Validators.required]),
+    id: '',
+    nombre: new FormControl(null, [Validators.required]),
+    provincia:new FormControl(null, [Validators.required]),
+    telefono: new FormControl(null, [Validators.required,Validators.pattern('[0-9]{9}')])
    }),
-   modality: [null, [Validators.required]],
-   surface:[null, [Validators.required]],
-   telefonos:[null, [Validators.required]],
+   modality: new FormControl(null, [Validators.required]),
+   surface:new FormControl(null, [Validators.required, Validators.pattern("[0-9]{1,2}")]),
+   telefonos:new FormControl(null, [Validators.required,Validators.pattern('[0-9]{9}')]),
 
  })
  
@@ -58,13 +58,11 @@ export class CreateRequestComponent implements OnInit {
 onSubmit(){
 
   //this.route.params.subscribe((data)=> this.service.createRequest( data))
-  console.log(this.requestForm.get("modality"))
+  console.log(this.requestForm.valid)
+  if(this.requestForm.valid){
     this.service.createRequest(this.requestForm.value);
     this.requestForm.reset();
-}
-
-onChange(aa){
-  console.log(aa)
-
+  }
+   
 }
 }
