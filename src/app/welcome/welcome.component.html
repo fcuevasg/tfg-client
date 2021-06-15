@@ -12,9 +12,77 @@
 
 <button (click)="submitSearchRequest(requestNumber.value)" mat-raised-button color="primary" class="searchButton">Buscar</button>
 
+</form>
+</div>
+
+
 
 
 
 <!-- CONTACTO   |   MAPA-->
-</form>
+
+
+<div class="contacto">
+
+
+
+  <div class="izq a">
+
+
+    <h1>Contacto</h1> 
+
+    <div class="info t"> 
+
+      <p>
+        Puedes contactar con nosotros en el telefono: 956 38 80 00
+       </p>
+
+       <p> De lunes a viernes de 09:00-13:00</p>
+       <p> O dejando tu comentario a continuación</p>
+
+    </div>
+
+    <div class="formulario t2">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Deja tu comentario</mat-card-title>
+        </mat-card-header>
+        <form class="example-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <mat-card-content class="contactContent">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Correo" formControlName="email" #email>
+            </mat-form-field>
+
+
+            <mat-form-field class="example-full-width">
+           
+              <textarea matInput placeholder="Comentario" formControlName="Comentario" #Comentario>
+                </textarea>
+              </mat-form-field>
+            </mat-card-content>
+            </form>
+
+
+
+      </mat-card>
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+<div class="a2">
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1900.0728937331312!2d-6.356008004802738!3d36.78186581042024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1623739462509!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+</div>
+
+
+
+
 </div>

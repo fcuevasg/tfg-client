@@ -30,3 +30,40 @@ $primaryColor: #2e6485;
   flex: 0 1 auto;
   align-self: auto;
 }
+
+
+.contactContent{
+  display:flex;
+  flex-direction: column;
+}
+
+.izq{
+  width: 30vw;
+
+}
+
+.t { grid-area: t; }
+.t2 { grid-area: t2; 
+margin-top: 4vh;
+form{
+  margin-top: 5vh;
+}
+
+}
+.contacto{
+
+  margin-top: 10vh;
+
+
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+  "a a2"; 
+
+
+}
+
+.a { grid-area: a; }
+.a2 { grid-area: a2; }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -13,6 +13,8 @@ export class WelcomeComponent implements OnInit {
 
   searchForm: FormGroup;
   route: ActivatedRoute
+  contactForm: FormGroup;
+
   constructor(
     private fb: FormBuilder,
     private router: Router
@@ -21,6 +23,10 @@ export class WelcomeComponent implements OnInit {
   ngOnInit(): void {
     this.searchForm  = this.fb.group({
       requestNumber: ''
+    })
+    this.contactForm = this.fb.group({
+      email: ['',[Validators.required,Validators.email]],
+      Comentario: ['',[Validators.required,Validators.maxLength(150)]]
     })
 
  //   this.searchForm.valueChanges.subscribe(console.log)
@@ -33,6 +39,8 @@ export class WelcomeComponent implements OnInit {
  
   }
 
-
+  onSubmit(){
+    
+  }
   
 }
